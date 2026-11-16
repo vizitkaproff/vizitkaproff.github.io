@@ -7,13 +7,12 @@
   <meta name="description" content="Личные сайты-визитки для людей кино, актёров, фотографов, мастеров и экспертов. Простая визитка от 20 000 тг, премиум с 3D до 80 000 тг." />
   <meta property="og:title" content="VizitkaProff — личные сайты-визитки" />
   <meta property="og:description" content="Одна ссылка вместо пачки скринов и PDF. Простая визитка от 20 000 тг." />
-  <meta property="og:image" content="https://vizitkaproff.github.io/img/example-desktop.jpg" />
   <meta property="og:type" content="website" />
   <meta name="theme-color" content="#0b0b0c" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23e9a23b'/%3E%3Ctext x='32' y='44' font-family='Arial' font-weight='800' font-size='34' fill='%231a1206' text-anchor='middle'%3EV%3C/text%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;1,500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -26,7 +25,8 @@
       </a>
       <nav aria-label="Разделы">
         <ul class="nav__links">
-          <li><a href="#example">Пример</a></li>
+          <li><a href="#styles">Дизайны</a></li>
+          <li><a href="#why">Преимущества</a></li>
           <li><a href="#price">Цены</a></li>
           <li><a href="#how">Как работаем</a></li>
           <li><a class="btn btn--small" href="#contact">Заказать</a></li>
@@ -48,62 +48,157 @@
           </p>
           <div class="actions" data-enter="4">
             <a class="btn" href="#contact">Заказать визитку</a>
-            <a class="btn btn--ghost" href="#price">Смотреть цены</a>
+            <a class="btn btn--ghost" href="#styles">Смотреть дизайны</a>
           </div>
-          <p class="hero__note" data-enter="5"><b>от 20 000 тг</b> · работает на телефоне и компьютере</p>
+          <p class="hero__note" data-enter="5"><b>от 20 000 тг</b> · без ежемесячной оплаты</p>
         </div>
-        <div class="hero__visual" data-enter="3" aria-hidden="true">
-          <div class="device device--laptop"><img src="img/example-desktop.jpg" alt="" width="1440" height="900" /></div>
-          <div class="device device--phone"><img src="img/example-mobile.jpg" alt="" width="390" height="844" /></div>
+        <div class="hero__stack" data-enter="3">
+          <div class="mock mock--beauty hero__mock hero__mock--1" aria-hidden="true"><div class="mock__in">
+              <div class="mock__nav"><i class="mock__logo"></i><span></span><span></span><span></span><b></b></div>
+              <div class="mock__hero">
+                <div class="mock__text"><em>Брови и ресницы</em><strong>Студия Аружан</strong><span class="mock__line"></span><span class="mock__line mock__line--short"></span><i class="mock__btn"></i></div>
+                <div class="mock__pic"></div>
+              </div>
+              <div class="mock__row"><i></i><i></i><i></i></div>
+            </div></div>
+          <div class="mock mock--cinema hero__mock hero__mock--2" aria-hidden="true"><div class="mock__in">
+              <div class="mock__nav"><i class="mock__logo"></i><span></span><span></span><span></span><b></b></div>
+              <div class="mock__hero">
+                <div class="mock__text"><em>Оператор-постановщик</em><strong>Данияр Ахметов</strong><span class="mock__line"></span><span class="mock__line mock__line--short"></span><i class="mock__btn"></i></div>
+                <div class="mock__pic"></div>
+              </div>
+              <div class="mock__row"><i></i><i></i><i></i></div>
+            </div></div>
+          <div class="mock mock--expert hero__mock hero__mock--3" aria-hidden="true"><div class="mock__in">
+              <div class="mock__nav"><i class="mock__logo"></i><span></span><span></span><span></span><b></b></div>
+              <div class="mock__hero">
+                <div class="mock__text"><em>Юрист</em><strong>Мадина Касымова</strong><span class="mock__line"></span><span class="mock__line mock__line--short"></span><i class="mock__btn"></i></div>
+                <div class="mock__pic"></div>
+              </div>
+              <div class="mock__row"><i></i><i></i><i></i></div>
+            </div></div>
         </div>
       </div>
     </section>
 
-    <!-- Пример -->
-    <section class="section" id="example">
+    <!-- Варианты дизайна -->
+    <section class="section" id="styles">
       <div class="wrap">
         <div class="head">
-          <p class="eyebrow">Пример работы</p>
-          <h2>Визитка режиссёра Мухамедбека Окаева</h2>
-          <p class="muted">Тёмная тема, 3D-киноплёнка с постерами на главном экране, фильмография,
-            фото с площадки и кнопки мессенджеров. Тариф «Премиум с 3D».</p>
+          <p class="eyebrow">Варианты дизайна</p>
+          <h2>Свой стиль под каждую профессию</h2>
+          <p class="muted">Цвета, шрифты и настроение подбираю под вас: вот шесть направлений, с которых можно начать.
+            Имена в макетах придуманы.</p>
         </div>
-        <a class="showcase" href="https://okhaevm-source.github.io/vizitka/" target="_blank" rel="noopener">
-          <span class="showcase__bar" aria-hidden="true"><i></i><i></i><i></i><span>okhaevm-source.github.io/vizitka</span></span>
-          <img src="img/example-desktop.jpg" alt="Главный экран сайта-визитки режиссёра Мухамедбека Окаева" width="1440" height="900" loading="lazy" />
-          <span class="showcase__cta">Открыть сайт <span aria-hidden="true">↗</span></span>
-        </a>
+        <ul class="styles">
+          <li class="style-card">
+            <div class="mock mock--cinema " aria-hidden="true"><div class="mock__in">
+              <div class="mock__nav"><i class="mock__logo"></i><span></span><span></span><span></span><b></b></div>
+              <div class="mock__hero">
+                <div class="mock__text"><em>Оператор-постановщик</em><strong>Данияр Ахметов</strong><span class="mock__line"></span><span class="mock__line mock__line--short"></span><i class="mock__btn"></i></div>
+                <div class="mock__pic"></div>
+              </div>
+              <div class="mock__row"><i></i><i></i><i></i></div>
+            </div></div>
+            <div class="style-card__meta">
+              <h3>Кино</h3>
+              <p class="style-card__who">Режиссёры, операторы, актёры</p>
+              <p>Тёмная тема, тёплый свет, постеры проектов</p>
+            </div>
+          </li>
+          <li class="style-card">
+            <div class="mock mock--minimal " aria-hidden="true"><div class="mock__in">
+              <div class="mock__nav"><i class="mock__logo"></i><span></span><span></span><span></span><b></b></div>
+              <div class="mock__hero">
+                <div class="mock__text"><em>Фотограф</em><strong>Алия Нуртаева</strong><span class="mock__line"></span><span class="mock__line mock__line--short"></span><i class="mock__btn"></i></div>
+                <div class="mock__pic"></div>
+              </div>
+              <div class="mock__row"><i></i><i></i><i></i></div>
+            </div></div>
+            <div class="style-card__meta">
+              <h3>Минимализм</h3>
+              <p class="style-card__who">Фотографы, архитекторы, дизайнеры</p>
+              <p>Белый фон, строгая типографика, много воздуха</p>
+            </div>
+          </li>
+          <li class="style-card">
+            <div class="mock mock--beauty " aria-hidden="true"><div class="mock__in">
+              <div class="mock__nav"><i class="mock__logo"></i><span></span><span></span><span></span><b></b></div>
+              <div class="mock__hero">
+                <div class="mock__text"><em>Брови и ресницы</em><strong>Студия Аружан</strong><span class="mock__line"></span><span class="mock__line mock__line--short"></span><i class="mock__btn"></i></div>
+                <div class="mock__pic"></div>
+              </div>
+              <div class="mock__row"><i></i><i></i><i></i></div>
+            </div></div>
+            <div class="style-card__meta">
+              <h3>Нежный</h3>
+              <p class="style-card__who">Мастера красоты, стилисты, флористы</p>
+              <p>Пудровые оттенки, мягкие формы, запись в один клик</p>
+            </div>
+          </li>
+          <li class="style-card">
+            <div class="mock mock--bright " aria-hidden="true"><div class="mock__in">
+              <div class="mock__nav"><i class="mock__logo"></i><span></span><span></span><span></span><b></b></div>
+              <div class="mock__hero">
+                <div class="mock__text"><em>Ведущий мероприятий</em><strong>Ерлан Show</strong><span class="mock__line"></span><span class="mock__line mock__line--short"></span><i class="mock__btn"></i></div>
+                <div class="mock__pic"></div>
+              </div>
+              <div class="mock__row"><i></i><i></i><i></i></div>
+            </div></div>
+            <div class="style-card__meta">
+              <h3>Яркий</h3>
+              <p class="style-card__who">Ведущие, блогеры, музыканты</p>
+              <p>Сочные цвета, крупные надписи, энергия</p>
+            </div>
+          </li>
+          <li class="style-card">
+            <div class="mock mock--expert " aria-hidden="true"><div class="mock__in">
+              <div class="mock__nav"><i class="mock__logo"></i><span></span><span></span><span></span><b></b></div>
+              <div class="mock__hero">
+                <div class="mock__text"><em>Юрист по семейным делам</em><strong>Мадина Касымова</strong><span class="mock__line"></span><span class="mock__line mock__line--short"></span><i class="mock__btn"></i></div>
+                <div class="mock__pic"></div>
+              </div>
+              <div class="mock__row"><i></i><i></i><i></i></div>
+            </div></div>
+            <div class="style-card__meta">
+              <h3>Деловой</h3>
+              <p class="style-card__who">Юристы, психологи, консультанты</p>
+              <p>Тёмно-синий, чистые блоки, доверие</p>
+            </div>
+          </li>
+          <li class="style-card">
+            <div class="mock mock--sport " aria-hidden="true"><div class="mock__in">
+              <div class="mock__nav"><i class="mock__logo"></i><span></span><span></span><span></span><b></b></div>
+              <div class="mock__hero">
+                <div class="mock__text"><em>Фитнес-тренер</em><strong>Тимур Каиров</strong><span class="mock__line"></span><span class="mock__line mock__line--short"></span><i class="mock__btn"></i></div>
+                <div class="mock__pic"></div>
+              </div>
+              <div class="mock__row"><i></i><i></i><i></i></div>
+            </div></div>
+            <div class="style-card__meta">
+              <h3>Спорт</h3>
+              <p class="style-card__who">Тренеры, нутрициологи, инструкторы</p>
+              <p>Глубокий зелёный, неоновый акцент, динамика</p>
+            </div>
+          </li>
+        </ul>
       </div>
     </section>
 
-    <!-- Что получаете -->
-    <section class="section section--alt" id="features">
+    <!-- Преимущества -->
+    <section class="section section--alt" id="why">
       <div class="wrap">
         <div class="head">
-          <p class="eyebrow">Что вы получаете</p>
-          <h2>Всё, чтобы вас запомнили и вам написали</h2>
+          <p class="eyebrow">Почему VizitkaProff</p>
+          <h2>Сайт как у студии, цена как у фрилансера</h2>
         </div>
         <ul class="features">
-          <li>
-            <span class="features__icon" aria-hidden="true">📱</span>
-            <h3>Красиво на телефоне</h3>
-            <p>Большинство откроет ссылку с телефона, поэтому сайт сначала делается под телефон.</p>
-          </li>
-          <li>
-            <span class="features__icon" aria-hidden="true">🎞️</span>
-            <h3>Ваши работы на виду</h3>
-            <p>Проекты, постеры, фото работ или услуги с ценами: то, ради чего вас ищут.</p>
-          </li>
-          <li>
-            <span class="features__icon" aria-hidden="true">💬</span>
-            <h3>Написать в один клик</h3>
-            <p>Кнопки WhatsApp, Telegram и Instagram сразу открывают переписку с вами.</p>
-          </li>
-          <li>
-            <span class="features__icon" aria-hidden="true">🔗</span>
-            <h3>Своя ссылка</h3>
-            <p>Бесплатный адрес сразу, а по желанию свой домен вроде imya.com.</p>
-          </li>
+          <li><span class="features__num">01</span><h3>Без абонентской платы</h3><p>Платите один раз за сайт. Размещение в интернете бесплатное, никаких ежемесячных счетов.</p></li>
+          <li><span class="features__num">02</span><h3>Дизайн под вас, не шаблон</h3><p>Не конструктор с чужой картинкой: цвета, шрифты и блоки собираются под вашу профессию.</p></li>
+          <li><span class="features__num">03</span><h3>Сначала для телефона</h3><p>Ссылку чаще всего открывают с телефона, поэтому там сайт выглядит лучше всего.</p></li>
+          <li><span class="features__num">04</span><h3>Написать в один клик</h3><p>Кнопки WhatsApp, Telegram и Instagram сразу открывают переписку с вами.</p></li>
+          <li><span class="features__num">05</span><h3>Правки включены</h3><p>Два круга правок входят в цену, а потом обновить текст или фото можно в любой момент.</p></li>
+          <li><span class="features__num">06</span><h3>Свой адрес по желанию</h3><p>Бесплатная ссылка сразу, а если хочется солиднее, подключим домен вроде imya.com.</p></li>
         </ul>
       </div>
     </section>
@@ -144,7 +239,7 @@
             <p class="plan__price"><small>до</small> 80 000 <small>тг</small></p>
             <ul>
               <li>Всё из «С галереей»</li>
-              <li>3D-эффект на главном экране, как в примере</li>
+              <li>3D-эффект на главном экране</li>
               <li>Анимации и эффекты</li>
             </ul>
             <a class="btn btn--ghost" href="https://wa.me/77089899151?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D1%80%D0%B5%D0%BC%D0%B8%D1%83%D0%BC%20%D0%B2%D0%B8%D0%B7%D0%B8%D1%82%D0%BA%D1%83%20%D1%81%203D." target="_blank" rel="noopener">Выбрать премиум</a>
@@ -187,7 +282,7 @@
 
   <footer class="footer">
     <div class="wrap footer__row">
-      <span>© <span id="year"></span> VizitkaProff · Мухамедбек Окаев</span>
+      <span>© <span id="year"></span> VizitkaProff</span>
       <a href="#top">Наверх ↑</a>
     </div>
   </footer>
