@@ -196,3 +196,21 @@ img { display: block; max-width: 100%; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-delay: 0s !important; transition-duration: 0.01ms !important; }
 }
+
+/* Услуги */
+.services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.service { display: flex; flex-direction: column; background: var(--alt); border-radius: var(--radius); overflow: hidden; transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease); }
+.service:hover { transform: translateY(-4px); box-shadow: 0 24px 50px -24px rgba(0, 0, 0, 0.25); }
+.service__pic { margin: 0; aspect-ratio: 72 / 52; overflow: hidden; }
+.service__pic img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s var(--ease); }
+.service:hover .service__pic img { transform: scale(1.03); }
+.service__body { display: flex; flex-direction: column; flex: 1; padding: 26px 26px 18px; }
+.service h3 { font-size: 24px; margin-bottom: 10px; }
+.service__body > p:not(.service__price) { color: var(--muted); font-size: 15px; flex: 1; }
+.service__price { font-size: 17px; font-weight: 600; margin: 18px 0 4px; }
+.service__links { display: flex; flex-wrap: wrap; gap: 0 22px; }
+.plans__more { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-top: 28px; padding: 28px 32px; background: var(--white); border-radius: var(--radius); }
+.plans__more p { color: var(--muted); font-size: 15px; max-width: 44em; }
+.plans__more b { color: var(--ink); font-weight: 600; }
+.plans__more .btn { flex: none; }
+@media (max-width: 900px) { .services { grid-template-columns: 1fr; max-width: 520px; margin-inline: auto; } .plans__more { flex-direction: column; align-items: stretch; text-align: center; } }
