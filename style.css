@@ -167,6 +167,7 @@ img { display: block; max-width: 100%; }
 .contact h2 { font-size: clamp(40px, 6vw, 72px); margin-bottom: 18px; }
 .contact__lead { color: #a1a1a6; font-size: 21px; max-width: 30em; margin: 0 auto 34px; }
 .actions--center { justify-content: center; }
+.contact__geo { color: #86868b; font-size: 15px; margin: -18px auto 30px; }
 
 /* Подвал */
 .footer { background: var(--alt); color: var(--muted); font-size: 12px; padding: 18px 0; }
