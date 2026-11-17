@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=2" />
   <script type="importmap">{ "imports": { "three": "https://unpkg.com/three@0.170.0/build/three.module.js" } }</script>
 </head>
 <body>
@@ -55,9 +55,13 @@
         <p class="hero__badge">Шугыла · Алматы</p>
         <h1>Мороженое<br />и&nbsp;чай <span>с&nbsp;лисёнком</span></h1>
         <p class="hero__lead">Фруктовые чаи, лимонады, смузи и&nbsp;сандэ. Заходите после школы!</p>
-        <div class="hero__cup" aria-hidden="true">
-          <img src="img/showcase-fruittea-double-passion.webp" alt="" width="600" height="600" />
-        </div>
+        <button class="mascot" id="mascot" type="button" aria-label="Лисёнок FOXidrinks машет вам">
+          <span class="mascot__say" aria-hidden="true">Сәлем! Привет! 👋</span>
+          <span class="mascot__fox" aria-hidden="true">
+            <img class="mascot__body" src="img/fox-body.png" alt="" width="480" height="546" />
+            <img class="mascot__arm" src="img/fox-arm.png" alt="" width="480" height="546" />
+          </span>
+        </button>
         <div class="hero__btns">
           <a class="btn" href="#menu">Смотреть меню</a>
           <a class="btn btn--ghost" href="#where">Как найти</a>
@@ -156,6 +160,6 @@
     <p>Демо-версия сайта точки FOXidrinks · сделано в VizitkaProff</p>
   </footer>
 
-  <script type="module" src="app.js"></script>
+  <script type="module" src="app.js?v=2"></script>
 </body>
 </html>

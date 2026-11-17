@@ -59,7 +59,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .hero__in > * { animation: pop-in 0.7s var(--bounce) both; }
 .hero__in > :nth-child(2) { animation-delay: 0.08s; }
 .hero__in > :nth-child(3) { animation-delay: 0.16s; }
-.hero__in > :nth-child(4) { animation: pop-in 0.7s var(--bounce) 0.24s both, float 4s ease-in-out 1s infinite; }
+.hero__in > :nth-child(4) { animation-delay: 0.24s; }
 .hero__in > :nth-child(5) { animation-delay: 0.32s; }
 @keyframes pop-in { from { opacity: 0; transform: translateY(24px) scale(0.9); } to { opacity: 1; transform: none; } }
 
@@ -164,3 +164,16 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .gate__input { min-height: 52px; border-radius: 16px; border: 2px solid var(--pink-200); padding: 0 16px; font: 800 20px var(--font); text-align: center; color: var(--brown); outline: none; }
 .gate__input:focus { border-color: var(--pink-deep); }
 .gate__err { color: var(--pink-deep); font-size: 14px; }
+
+/* Лисёнок-маскот: покачивается и машет рукой с мороженым */
+.mascot { position: relative; display: block; width: min(56vw, 250px); margin: 4px auto 10px; padding: 0; border: 0; background: none; -webkit-tap-highlight-color: transparent; }
+.mascot__fox { position: relative; display: block; aspect-ratio: 480 / 546; animation: sway 3.2s ease-in-out infinite; transform-origin: 50% 100%; filter: drop-shadow(0 18px 18px rgba(232, 65, 122, 0.25)); }
+.mascot__fox img { position: absolute; inset: 0; width: 100%; height: 100%; }
+.mascot__arm { transform-origin: 30% 61.5%; animation: wave 1.6s ease-in-out infinite; }
+.mascot.is-excited .mascot__arm { animation: wave 0.35s ease-in-out 4; }
+.mascot.is-excited .mascot__fox { animation: hop 0.5s var(--bounce) 2; }
+.mascot__say { position: absolute; top: -6px; right: -8%; z-index: 2; padding: 8px 12px; border-radius: 16px 16px 16px 4px; background: #fff; color: var(--pink-deep); font-weight: 900; font-size: 14px; white-space: nowrap; box-shadow: 0 6px 16px rgba(232, 65, 122, 0.2); animation: say 3.2s ease-in-out infinite; }
+@keyframes wave { 0%, 100% { transform: rotate(4deg); } 50% { transform: rotate(-12deg); } }
+@keyframes sway { 0%, 100% { transform: rotate(-2deg) translateY(0); } 50% { transform: rotate(2deg) translateY(-8px); } }
+@keyframes hop { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-22px) scale(1.04); } }
+@keyframes say { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-4px) scale(1.04); } }

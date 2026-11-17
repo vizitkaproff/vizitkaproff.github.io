@@ -205,5 +205,13 @@ document.getElementById("map").addEventListener("click", (e) => {
   }
 });
 
+// ---------- Лисёнок машет ----------
+const mascot = document.getElementById("mascot");
+mascot.addEventListener("click", () => {
+  mascot.classList.remove("is-excited"); void mascot.offsetWidth; mascot.classList.add("is-excited");
+  [0, 120, 240].forEach((d) => setTimeout(tick, d));
+});
+mascot.addEventListener("animationend", (e) => { if (e.target.classList.contains("mascot__fox")) mascot.classList.remove("is-excited"); });
+
 // ---------- 3D-сцена (запускаем после появления текста) ----------
 setTimeout(() => import("./scene.js").then((m) => m.start(document.getElementById("scene"))).catch(() => {}), 600);
