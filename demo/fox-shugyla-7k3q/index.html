@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>FOXidrinks Шугыла — мороженое и чай</title>
+  <meta name="description" content="FOXidrinks в Шугыле: фруктовые чаи, лимонады, смузи и мороженое. Шугыла, 340/46 к3, Алматы." />
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#ffe9ef" />
+  <link rel="icon" href="img/foxi-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script type="importmap">{ "imports": { "three": "https://unpkg.com/three@0.170.0/build/three.module.js" } }</script>
+</head>
+<body>
+  <div class="gate" id="gate">
+    <form class="gate__box" id="gateForm" autocomplete="off">
+      <img src="img/foxi-logo.png" alt="FOXidrinks" width="600" height="190" />
+      <p class="gate__title">Демо для владельца</p>
+      <label class="gate__label" for="gateCode">Введите код доступа</label>
+      <input class="gate__input" id="gateCode" type="password" inputmode="text" autocapitalize="off" spellcheck="false" />
+      <p class="gate__err" id="gateErr" hidden>Неверный код</p>
+      <button class="btn" type="submit">Открыть</button>
+    </form>
+  </div>
+  <script>
+    (function () {
+      var H = "8e5893c4c7447fbd3f52935dc2db300d0f2cb4372316284172eb466be590f2e1";
+      var gate = document.getElementById("gate");
+      if (sessionStorage.getItem("fox-ok") === H) { gate.remove(); return; }
+      document.documentElement.classList.add("locked");
+      document.getElementById("gateForm").addEventListener("submit", async function (e) {
+        e.preventDefault();
+        var v = document.getElementById("gateCode").value.trim().toLowerCase();
+        var buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(v));
+        var hex = Array.from(new Uint8Array(buf)).map(function (b) { return b.toString(16).padStart(2, "0"); }).join("");
+        if (hex === H) { sessionStorage.setItem("fox-ok", H); document.documentElement.classList.remove("locked"); gate.remove(); }
+        else { var err = document.getElementById("gateErr"); err.hidden = false; }
+      });
+    })();
+  </script>
+  <!-- Демо для владельца точки FOXidrinks (Шугыла). Не публиковать без согласия владельца и франшизы. -->
+  <header class="top">
+    <img class="top__logo" src="img/foxi-logo.png" alt="FOXidrinks — Ice cream &amp; Tea" width="600" height="190" />
+    <button class="sound" id="sound" type="button" aria-pressed="true" aria-label="Звук включён">🔊</button>
+  </header>
+
+  <main>
+    <!-- 1. Первый экран с 3D -->
+    <section class="hero">
+      <canvas class="hero__scene" id="scene" aria-hidden="true"></canvas>
+      <div class="hero__in">
+        <p class="hero__badge">Шугыла · Алматы</p>
+        <h1>Мороженое<br />и&nbsp;чай <span>с&nbsp;лисёнком</span></h1>
+        <p class="hero__lead">Фруктовые чаи, лимонады, смузи и&nbsp;сандэ. Заходите после школы!</p>
+        <div class="hero__cup" aria-hidden="true">
+          <img src="img/showcase-fruittea-double-passion.webp" alt="" width="600" height="600" />
+        </div>
+        <div class="hero__btns">
+          <a class="btn" href="#menu">Смотреть меню</a>
+          <a class="btn btn--ghost" href="#where">Как найти</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Меню-барабан -->
+    <section class="menu" id="menu">
+      <h2>Меню</h2>
+      <p class="menu__hint">Листайте пальцем 👆 — со&nbsp;звуком пузырьков</p>
+      <div class="chips" role="tablist" aria-label="Категории меню">
+        <button class="chip is-on" data-cat="all" type="button">Всё</button>
+        <button class="chip" data-cat="tea" type="button">Фруктовый чай</button>
+        <button class="chip" data-cat="lemonade" type="button">Лимонады</button>
+        <button class="chip" data-cat="smoothie" type="button">Смузи</button>
+        <button class="chip" data-cat="ice" type="button">Мороженое</button>
+      </div>
+      <div class="wheel">
+        <button class="wheel__arrow wheel__arrow--prev" type="button" aria-label="Предыдущий">‹</button>
+        <div class="wheel__track" id="track" tabindex="0" aria-label="Меню, листайте влево и вправо"></div>
+        <button class="wheel__arrow wheel__arrow--next" type="button" aria-label="Следующий">›</button>
+      </div>
+      <div class="info" aria-live="polite">
+        <p class="info__cat" id="infoCat"></p>
+        <h3 class="info__name" id="infoName"></h3>
+        <p class="info__text" id="infoText"></p>
+        <p class="info__price">Цену уточняйте на кассе</p>
+      </div>
+    </section>
+
+    <!-- 3. Карта постоянного клиента -->
+    <section class="loyal" id="loyal">
+      <h2>Тұрақты клиент картасы</h2>
+      <p class="loyal__sub">Карта постоянного клиента: <b>6 кофе — в&nbsp;подарок!</b> Нажимайте на кружочки 👇</p>
+      <div class="card" id="card">
+        <div class="card__head">
+          <span class="card__brand">Foxidrinks</span>
+          <span class="card__paw" aria-hidden="true">🐾</span>
+        </div>
+        <div class="card__body">
+          <img class="card__fox" src="img/foxi-logo.png" alt="" width="600" height="190" />
+          <div class="stamps" id="stamps">
+            <button type="button" class="stamp" aria-label="Отметка 1"></button>
+            <button type="button" class="stamp" aria-label="Отметка 2"></button>
+            <button type="button" class="stamp" aria-label="Отметка 3"></button>
+            <button type="button" class="stamp" aria-label="Отметка 4"></button>
+            <button type="button" class="stamp" aria-label="Отметка 5"></button>
+            <button type="button" class="stamp stamp--free" aria-label="Подарок">FREE</button>
+          </div>
+        </div>
+        <p class="card__foot">6 кофе тегін / в подарок · @foxidrinks</p>
+      </div>
+      <p class="loyal__note" id="loyalNote">Покупаете напиток — получаете отметку. Шестой — бесплатно.</p>
+    </section>
+
+    <!-- 4. Где мы -->
+    <section class="where" id="where">
+      <h2>Где мы</h2>
+      <p class="where__addr">Шугыла, 340/46 к3 · Алматы</p>
+      <div class="map" id="map">
+        <svg class="map__svg" viewBox="0 0 400 260" aria-hidden="true">
+          <rect width="400" height="260" fill="#fff6ee" />
+          <path d="M0 70 H400 M0 180 H400 M90 0 V260 M300 0 V260" stroke="#ffd6e2" stroke-width="22" fill="none" />
+          <path d="M0 125 C120 110 260 150 400 120" stroke="#ffe7b8" stroke-width="16" fill="none" />
+          <rect x="110" y="88" width="70" height="70" rx="12" fill="#ffe1ea" />
+          <rect x="200" y="88" width="80" height="34" rx="10" fill="#e3f4ff" />
+          <rect x="200" y="132" width="80" height="30" rx="10" fill="#e6f7e7" />
+          <rect x="20" y="88" width="52" height="70" rx="10" fill="#e6f7e7" />
+          <rect x="320" y="88" width="62" height="70" rx="10" fill="#ffe1ea" />
+          <rect x="110" y="196" width="170" height="46" rx="12" fill="#e3f4ff" />
+          <rect x="20" y="10" width="52" height="42" rx="10" fill="#ffe1ea" />
+          <rect x="110" y="10" width="170" height="42" rx="12" fill="#e6f7e7" />
+        </svg>
+        <button class="pin" id="pin" type="button" aria-label="Показать адрес FOXidrinks на карте">
+          <span class="pin__pulse" aria-hidden="true"></span>
+          <span class="pin__head" aria-hidden="true">🦊</span>
+        </button>
+        <div class="bubble" id="bubble" role="dialog" aria-label="Адрес" hidden>
+          <b>FOXidrinks</b>
+          <span>Шугыла, 340/46 к3</span>
+          <div class="bubble__links">
+            <a href="https://2gis.kz/almaty/search/%D0%A8%D1%83%D0%B3%D1%8B%D0%BB%D0%B0%20340%2F46%20%D0%BA3" target="_blank" rel="noopener">2GIS</a>
+            <a href="https://yandex.kz/maps/?text=%D0%90%D0%BB%D0%BC%D0%B0%D1%82%D1%8B%2C%20%D0%A8%D1%83%D0%B3%D1%8B%D0%BB%D0%B0%20340%2F46%20%D0%BA3" target="_blank" rel="noopener">Яндекс</a>
+          </div>
+        </div>
+      </div>
+      <div class="where__btns">
+        <a class="btn" href="https://2gis.kz/almaty/search/%D0%A8%D1%83%D0%B3%D1%8B%D0%BB%D0%B0%20340%2F46%20%D0%BA3" target="_blank" rel="noopener">Открыть в 2GIS</a>
+        <a class="btn btn--ghost" href="https://www.instagram.com/foxidrinks" target="_blank" rel="noopener">Instagram @foxidrinks</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>Демо-версия сайта точки FOXidrinks · сделано в VizitkaProff</p>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
